@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 				files: ["_site/*.html","_site/css/*.css","_site/js/*.js"]
 			},
 			dev: {
-				files: ['js/es6/*.js'],
+				files: ['js/_es6/*.js'],
 				tasks: 'babel:dev'
 			}
 		},
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: './js/es6',
+					cwd: './js/_es6',
 					src: ['*.js'],
 					dest: './js/',
 					ext: '.js'
