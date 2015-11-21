@@ -1,0 +1,10 @@
+{
+	sections: [
+		"problem",
+		"solution",
+		"about",
+		"team",
+		"investors",
+		"contact"
+	]
+}

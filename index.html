@@ -4,20 +4,35 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+    <div class="section" id="problem">
+      <div style="height: 250px; width: 100%;">
+        <h3>problem</h3>
+      </div>
+    </div>
+    <div class="section" id="solution">
+      <div style="height: 250px; width: 100%;">
+        <h3>solution</h3>
+      </div>
+    </div>
+    <div class="section" id="about">
+      <div style="height: 250px; width: 100%;">
+        <h3>about</h3>
+      </div>
+    </div>
+    <div class="section" id="team">
+      <div style="height: 250px; width: 100%;">
+        <h3>team</h3>
+      </div>
+    </div>
+    <div class="section" id="investors">
+      <div style="height: 250px; width:100%;">
+        <h3>Investors</h3>
+      </div>
+    </div>
+    <div class="section" id="contact">
+      <div style="height: 250px; width: 100%;">
+        <h3>contact</h3>
+      </div>
+    </div>
 
 </div>
