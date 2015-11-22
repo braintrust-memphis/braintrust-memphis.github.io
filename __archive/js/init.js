@@ -7,7 +7,7 @@ $('a.section-link').each(function (i, el) {
 	$(el).on('click', function (e) {
 		console.log(id);
 		window.open('#' + id, '_self');
-		$('body').animate({ scrollTop: '-=75px' }, 250);
+		$('body').animate({ scrollTop: '-=75px' }, 0);
 	});
 });
 //# sourceMappingURL=init.js.map

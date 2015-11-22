@@ -1,0 +1,29 @@
+@import url("http://bootswatch.com/superhero/bootstrap.min.css");
+header.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+header.site-header .navbar a.navbar-brand, header.site-header .navbar a.section-link {
+  color: white !important;
+}
+header.site-header nav > * {
+  text-transform: uppercase;
+}
+
+body {
+  margin-top: 50px;
+}
+body main {
+  margin: auto;
+  width: 63%;
+}
+
+body {
+  background-color: #fdfdfd;
+  color: #252525;
+}
+
+/*# sourceMappingURL=main.css.map */

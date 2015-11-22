@@ -1,71 +1,136 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		watch: {
-			default: {
-				options: {
-					livreload: 29929
-				},
-				files: ["_site/*.html","_site/css/*.css","_site/js/*.js"]
-			},
 			dev: {
-				files: ['js/_es6/*.js'],
-				tasks: 'babel:dev'
+				options: { livereload: 20015 },
+				files: ['dev/*.html','dev/css/*.css','dev/js/*.js']
+			},
+			jade: {
+				files: ['./src/jade/**/*.jade'],
+				tasks: ['jade:dev']
+			},
+			sass: {
+				files: ['./src/sass/**/*.sass'],
+				tasks: ['sass:dev']
+			},
+			babel: {
+				files: ['./src/js/*.js'],
+				tasks: ['babel:dev']
 			}
 		},
-		copy: {
-			main: {
-				files: {
-					'js/lib/jquery.min.js' : 'node_modules/jquery/dist/jquery.min.js'
-				}
+		jade: {
+			dev: {
+			    files: [{
+			    	expand: true,
+			    	cwd: './src/jade/',
+			    	src: ['**/*.jade'],
+			    	dest: './dev/',
+			    	ext: '.html'
+			    }]
+			},
+			build: {
+				options: {
+					data: function (d,s) {
+						return require('./src/jade/locals.prod.json')
+					}
+				},
+				files: [{
+					expand: true,
+					cwd: './src/jade/',
+					src: ['**/*.jade','!_templates/**/*.jade'],
+					dest: './prod/',
+					ext: '.html'
+				}]
+			}
+		},
+		sass: {
+			dev: {
+				options: { 
+					style: 'expanded'
+				},
+				files: [{
+					expand: true,
+					cwd: './src/sass',
+					src: '**/*.sass',
+					dest: 'dev/css',
+					ext: '.css'
+				}]
+			},
+			build: {
+				options: { 
+					style: 'compressed',
+					sourceMap: false
+				},
+				files: [{
+					expand: true,
+					cwd: './src/sass',
+					src: '*.sass',
+					dest: 'prod/css',
+					ext: '.min.css'
+				}]
 			}
 		},
 		babel: {
 			dev: {
-				options:{
+				options: {
 					sourceMap: 'linked',
+					plugins: [
+						'transform-strict-mode'
+					],
 					presets: ['es2015']
 				},
 				files: [{
 					expand: true,
-					cwd: './js/_es6',
-					src: ['*.js'],
-					dest: './js/',
+					cwd: './src/js/',
+					src: '*.js',
+					dest: './dev/js/',
 					ext: '.js'
 				}]
 			},
 			build: {
-				options:{
+				options: {
 					sourceMap: false,
+					plugins: [
+						'transform-strict-mode',
+						'transform-remove-console'
+					],
 					presets: ['es2015']
 				},
 				files: [{
 					expand: true,
-					cwd: './js/',
-					src: ['**/*.js'],
-					dest: './_site/js/',
+					cwd: './src/js',
+					src: '*.js',
+					dest: '.tmp/js',
 					ext: '.js'
 				}]
 			}
 		},
 		uglify: {
-			options: {
-				mangle: true,
-				compress: true,
-				sourceMap: false
-			},
 			build: {
-				files: {
-					'_site/js/init.min.js':'_site/js/init.js'
-				}
+				options: {
+					compress: true,
+					mangle: false,
+					mangleProperties: false,
+					preserveComments: false
+				},
+				files: [{
+					expand: true,
+					cwd: './.tmp/js',
+					src: '*.js',
+					dest: './prod/js',
+					ext: '.min.js'
+				}]
 			}
 		}
 	})
 
-	grunt.loadNpmTasks('grunt-contrib-copy')
 	grunt.loadNpmTasks('grunt-contrib-watch')
+	grunt.loadNpmTasks('grunt-contrib-jade')
+	grunt.loadNpmTasks('grunt-contrib-sass')
 	grunt.loadNpmTasks('grunt-babel')
 	grunt.loadNpmTasks('grunt-contrib-uglify')
 
-	grunt.registerTask("default", ['copy:main','watch:dev'])
-	grunt.registerTask('build', ['babel:build','uglify:build'])
+	grunt.registerTask('default',['copy'])
+	grunt.registerTask('dev',['watch'])
+	grunt.registerTask('build',['jade:build','sass:build','babel:build','uglify:build'])
 }
