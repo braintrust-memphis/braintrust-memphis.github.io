@@ -1,3 +1,4 @@
+$brand : #df691a
 body
 	margin-top: 45px
 	overflow-x: hidden
@@ -11,12 +12,24 @@ body
 		margin: auto
 		width: 63%
 		section
-			margin: 25px auto
+			margin: 100px auto
+			&:first-of-type
+				margin: 25px auto
+			@media only screen and (max-width: 500px)
+				margin: 50px auto
+				&:first-of-type
+					margin: 12px auto
 			h3
 				text-transform: uppercase
 			p, h5
 				letter-spacing: auto
 				line-height: 1.75em
+			&#signup
+				input
+					border: 1px solid $brand
+				button.btn-warning
+					background-color: $brand
+					border: 1px solid $brand
 	.team-wrapper
 		text-align: center
 		.member-card

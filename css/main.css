@@ -15,7 +15,18 @@ body main {
   width: 63%;
 }
 body main section {
+  margin: 100px auto;
+}
+body main section:first-of-type {
   margin: 25px auto;
+}
+@media only screen and (max-width: 500px) {
+  body main section {
+    margin: 50px auto;
+  }
+  body main section:first-of-type {
+    margin: 12px auto;
+  }
 }
 body main section h3 {
   text-transform: uppercase;
@@ -23,6 +34,13 @@ body main section h3 {
 body main section p, body main section h5 {
   letter-spacing: auto;
   line-height: 1.75em;
+}
+body main section#signup input {
+  border: 1px solid #df691a;
+}
+body main section#signup button.btn-warning {
+  background-color: #df691a;
+  border: 1px solid #df691a;
 }
 body .team-wrapper {
   text-align: center;
@@ -78,6 +96,7 @@ header.site-header {
 }
 header.site-header .navbar a.navbar-brand, header.site-header .navbar a.section-link {
   color: white !important;
+  cursor: pointer;
 }
 header.site-header nav > * {
   text-transform: uppercase;
@@ -102,6 +121,15 @@ footer address a:link {
 body {
   background-color: #fdfdfd;
   color: #252525;
+}
+
+.mobile-only {
+  display: block;
+}
+@media only screen and (min-width: 500px) {
+  .mobile-only {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -14,3 +14,10 @@ $('a.section-link').each(function(i,el) {
 })
 
 $('body').scrollspy({ target: '#navbar-example' })
+
+$('form').on('submit', function(e) {
+	e.preventDefault();
+	var mailto = `mailto:braintrust.memphis@gmail.com?subject=Interest%20in%20Braintrust&body=Please%20add%20me%20to%20your%20newsletter`
+	window.open(mailto,"_top")
+	$('form').html('<div class="alert alert-success"><p>Thank you for signing up <br class="mobile-only">for our newsletter.</p></div>')
+})
