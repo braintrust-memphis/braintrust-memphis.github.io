@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 		watch: {
 			dev: {
 				options: { livereload: 20015 },
-				files: ['dev/*.html','dev/css/*.css','dev/js/*.js']
+				files: ['*.html','css/*.css','js/*.js']
 			},
 			jade: {
 				files: ['./src/jade/**/*.jade'],
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 			    	expand: true,
 			    	cwd: './src/jade/',
 			    	src: ['**/*.jade'],
-			    	dest: './dev/',
+			    	dest: './',
 			    	ext: '.html'
 			    }]
 			},
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: './src/sass',
 					src: '**/*.sass',
-					dest: 'dev/css',
+					dest: 'css',
 					ext: '.css'
 				}]
 			},
@@ -83,7 +83,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: './src/js/',
 					src: '*.js',
-					dest: './dev/js/',
+					dest: './js/',
 					ext: '.js'
 				}]
 			},
@@ -125,8 +125,8 @@ module.exports = function(grunt) {
 		copy: {
 			lib: {
 				files: {
-					"dev/js/jquery.min.js" : "node_modules/jquery/dist/jquery.min.js",
-					"dev/js/bootstrap.min.js" : "node_modules/bootstrap/dist/js/bootstrap.min.js"
+					"js/jquery.min.js" : "node_modules/jquery/dist/jquery.min.js",
+					"js/bootstrap.min.js" : "node_modules/bootstrap/dist/js/bootstrap.min.js"
 				}
 			}
 		}

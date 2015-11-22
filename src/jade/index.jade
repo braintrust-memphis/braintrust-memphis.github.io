@@ -22,26 +22,55 @@ body(data-spy="scroll" data-target=".navbar-nav")
 							for sec in sections
 								li
 									a(class="section-link" data-id="#{sec}") #{sec}
-	div.col-md-3
-	main.home.col-md-6
-		section(class="section" id="problem")
-			h3 problem
-			p
-		section(class="section" id="solution")
-			h3 solution
-			p Nulla aliqua voluptate id culpa id qui. Dolore tempor commodo nulla do aliquip veniam consequat. Voluptate pariatur ullamco amet dolor deserunt voluptate dolor ipsum laboris. Lorem nulla et minim laboris voluptate velit sit reprehenderit consequat aliquip magna est enim. Lorem aliquip qui quis Lorem laboris adipisicing minim velit elit.
-		section(class="section" id="about")
-			h3 about
-			p Nulla aliqua voluptate id culpa id qui. Dolore tempor commodo nulla do aliquip veniam consequat. Voluptate pariatur ullamco amet dolor deserunt voluptate dolor ipsum laboris. Lorem nulla et minim laboris voluptate velit sit reprehenderit consequat aliquip magna est enim. Lorem aliquip qui quis Lorem laboris adipisicing minim velit elit.
-		section(class="section" id="team")
-			h3 team
-			p Nulla aliqua voluptate id culpa id qui. Dolore tempor commodo nulla do aliquip veniam consequat. Voluptate pariatur ullamco amet dolor deserunt voluptate dolor ipsum laboris. Lorem nulla et minim laboris voluptate velit sit reprehenderit consequat aliquip magna est enim. Lorem aliquip qui quis Lorem laboris adipisicing minim velit elit.
-		section(class="section" id="investors")
-			h3 investors
-			p Nulla aliqua voluptate id culpa id qui. Dolore tempor commodo nulla do aliquip veniam consequat. Voluptate pariatur ullamco amet dolor deserunt voluptate dolor ipsum laboris. Lorem nulla et minim laboris voluptate velit sit reprehenderit consequat aliquip magna est enim. Lorem aliquip qui quis Lorem laboris adipisicing minim velit elit.
-		section(class="section" id="contact")
-			h3 contact
-			p Nulla aliqua voluptate id culpa id qui. Dolore tempor commodo nulla do aliquip veniam consequat. Voluptate pariatur ullamco amet dolor deserunt voluptate dolor ipsum laboris. Lorem nulla et minim laboris voluptate velit sit reprehenderit consequat aliquip magna est enim. Lorem aliquip qui quis Lorem laboris adipisicing minim velit elit.
-	div.col-md-3
-	footer
+	div.row
+		div.jumbotron
+	div.row
+		div.col-md-3
+		main.home.col-md-6
+			section(class="section" id="problem")
+				h3 problem
+				p People waste years of their life doing jobs they hate; they feel like their degree is useless, but it's just too late to change majors. People feel pigeon-holed with their degree.
+				p 80% of students enter college undeclared, and the lack of guidance certainly doesn't help.
+
+			section(class="section" id="solution")
+				h3 solution
+				p Our solution at Braintrust is to inspire people with their calling.
+				p We are building a predictive tool that provides individuals with career opportunities and innovations that are relevant to their skills, education, experience, and interests.
+				p Using information that students already know about themselves, we are helping students take their passion and make it their career.
+
+			section(class="section" id="about")
+				h3 about
+				p Braintrust is made up of 7 individuals seeking to change the way the world approaches education, specifically change the way students choose or change their majors.
+			section(class="section" id="team")
+				h3 team
+				div.team-wrapper
+					- var team = [ { name: "zach turner", title:"founder" }, { name: "monique hagler", title:"designer" }, { name: "geoff davis", title:"web developer" }, { name: "scott finney", title: "strategist" }, { name: "Jennifer Sadler", title: "strategist" }, { name: "Samuel Palaparthy", title: "project manager" }, { name: "burton bridges", title: "creative advisor" } ]
+					for member in team
+						div.member-card
+							div.member-profile(class="profile-#{member.name.replace(' ','-')}")
+							ul.list-unstyled
+								li.member-name: h5 #{member.name}
+								li.member-title: p #{member.title}
+						if member.name === "zach turner" || member.name === "scott finney"
+							<br>
+
+			//- section(class="section" id="investors")
+			//- 	h3 investors
+			//- 	p Nulla aliqua voluptate id culpa id qui. Dolore tempor commodo nulla do aliquip veniam consequat. Voluptate pariatur ullamco amet dolor deserunt voluptate dolor ipsum laboris. Lorem nulla et minim laboris voluptate velit sit reprehenderit consequat aliquip magna est enim. Lorem aliquip qui quis Lorem laboris adipisicing minim velit elit.
+		div.col-md-3
+	footer.bg-primary
+		div.row
+			.col-md-3
+			.col-md-6
+				section(class="section" id="contact")
+					h3 contact
+					dl
+						dt Email
+						dd xxx@xx.xx
+						dt Phone
+						dd xxx-xxx-xxxx
+						dt Address
+						dd
+							address 123 Union Ave, Suite 300 #[br] Memphis, TN 38103
+			.col-md-3
 	script(src="js/init.js")

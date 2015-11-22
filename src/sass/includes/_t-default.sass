@@ -1,5 +1,52 @@
 body
-	margin-top: 50px
+	margin-top: 45px
+	overflow-x: hidden
+	div.jumbotron
+		background-color: white
+		background-image: url(/img/student-hero.jpg)
+		background-size: cover
+		background-position: center
+		height: 63vh
 	main
 		margin: auto
 		width: 63%
+		section
+			margin: 25px auto
+			h3
+				text-transform: uppercase
+			p, h5
+				letter-spacing: auto
+				line-height: 1.75em
+	.team-wrapper
+		text-align: center
+		.member-card
+			display: inline-block
+			padding: 10px 20px
+			div.member-profile
+				$profile-size: 100px
+				background-size: cover
+				background-position: center top
+				border-radius: 50%
+				height: $profile-size
+				margin: auto
+				width: $profile-size
+				&.profile-zach-turner
+					background-image: url(../img/zach-turner.jpg)
+				&.profile-monique-hagler
+					background-image: url(../img/monique-hagler.jpg)
+				&.profile-geoff-davis
+					background-image: url(../img/geoff-davis.jpg)
+				&.profile-scott-finney
+					background-image: url(../img/scott-finney.jpg)
+				&.profile-jennifer-sadler
+					background-image: url(../img/jennifer-sadler.jpg)
+				&.profile-samuel-palaparthy
+					background-image: url(../img/samuel-palaparthy.jpg)
+				&.profile-burton-bridges
+					background-image: url(../img/burton-bridges.jpg)
+			li.member-name
+				h5
+					text-transform: capitalize
+			li.member-title
+				p
+					text-transform: capitalize
