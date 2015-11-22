@@ -121,6 +121,14 @@ module.exports = function(grunt) {
 					ext: '.min.js'
 				}]
 			}
+		},
+		copy: {
+			lib: {
+				files: {
+					"dev/js/jquery.min.js" : "node_modules/jquery/dist/jquery.min.js",
+					"dev/js/bootstrap.min.js" : "node_modules/bootstrap/dist/js/bootstrap.min.js"
+				}
+			}
 		}
 	})
 
@@ -129,8 +137,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass')
 	grunt.loadNpmTasks('grunt-babel')
 	grunt.loadNpmTasks('grunt-contrib-uglify')
+	grunt.loadNpmTasks('grunt-contrib-copy')
 
 	grunt.registerTask('default',['copy'])
-	grunt.registerTask('dev',['watch'])
+	grunt.registerTask('dev',['copy','watch'])
 	grunt.registerTask('build',['jade:build','sass:build','babel:build','uglify:build'])
 }

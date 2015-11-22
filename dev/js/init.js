@@ -8,6 +8,10 @@ $('a.section-link').each(function (i, el) {
 		console.log(id);
 		window.open('#' + id, '_self');
 		$('body').animate({ scrollTop: '-=40px' }, 0);
+		if ($(window).width() <= 767) {
+			$('button[data-target]').click();
+			console.log('click');
+		}
 	});
 });
 
