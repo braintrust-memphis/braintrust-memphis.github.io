@@ -1,4 +1,74 @@
 @import url("http://bootswatch.com/superhero/bootstrap.min.css");
+body {
+  margin-top: 45px;
+  overflow-x: hidden;
+}
+body div.jumbotron {
+  background-color: white;
+  background-image: url(/img/student-hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 63vh;
+}
+body main {
+  margin: auto;
+  width: 63%;
+}
+body main section {
+  margin: 25px auto;
+}
+body main section h3 {
+  text-transform: uppercase;
+}
+body main section p, body main section h5 {
+  letter-spacing: auto;
+  line-height: 1.75em;
+}
+body .team-wrapper {
+  text-align: center;
+}
+body .team-wrapper .member-card {
+  display: inline-block;
+  padding: 10px 20px;
+}
+body .team-wrapper .member-card div.member-profile {
+  background-size: cover;
+  background-position: center top;
+  border-radius: 50%;
+  height: 150px;
+  margin: auto;
+  width: 150px;
+}
+body .team-wrapper .member-card div.member-profile.profile-zach-turner {
+  background-image: url(../img/zach-turner.jpg);
+}
+body .team-wrapper .member-card div.member-profile.profile-monique-hagler {
+  background-image: url(../img/monique-hagler.jpg);
+}
+body .team-wrapper .member-card div.member-profile.profile-geoff-davis {
+  background-image: url(../img/geoff-davis.jpg);
+}
+body .team-wrapper .member-card div.member-profile.profile-scott-finney {
+  background-image: url(../img/scott-finney.jpg);
+}
+body .team-wrapper .member-card div.member-profile.profile-jennifer-sadler {
+  background-image: url(../img/jennifer-sadler.jpg);
+}
+body .team-wrapper .member-card div.member-profile.profile-samuel-palaparthy {
+  background-image: url(../img/samuel-palaparthy.jpg);
+}
+body .team-wrapper .member-card div.member-profile.profile-burton-bridges {
+  background-image: url(../img/burton-bridges.jpg);
+}
+body .team-wrapper .member-card li.member-name h5 {
+  border-bottom: 1px solid #232323;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+body .team-wrapper .member-card li.member-title p {
+  text-transform: capitalize;
+}
+
 header.site-header {
   position: fixed;
   top: 0;
@@ -13,12 +83,20 @@ header.site-header nav > * {
   text-transform: uppercase;
 }
 
-body {
-  margin-top: 50px;
+footer {
+  width: 100%;
 }
-body main {
-  margin: auto;
-  width: 63%;
+footer h3 {
+  text-transform: uppercase;
+}
+footer a:link {
+  color: white;
+}
+footer address {
+  color: white;
+}
+footer address a:link {
+  color: white;
 }
 
 body {
